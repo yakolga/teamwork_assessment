@@ -1,0 +1,88 @@
+@use 'variables' as *;
+
+.accordion-item {
+    background-color: $card-bg;
+    overflow: hidden;
+
+    &__button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        border-radius: $radius;
+        background-color: $card-bg;
+        width: 100%;
+        padding: 18px;
+    }
+
+    &__title {
+        font-size: 18px;
+        line-height: 120%;
+        font-weight: 500;
+
+        @media (min-width: 979px) {
+            font-size: 21px;
+        }
+    }
+
+    &__chevron {
+        font-size: 20px;
+        color: $deep-grey;
+        transition-duration: .4s;
+        transition-property: transform;
+        transition-timing-function: ease-out;
+    }
+
+    &__content {
+        max-height: 0;
+        opacity: 0;
+        transform: translateY(20%);
+        transition: height .4s ease-out, opacity .4s ease-out, transform .4s ease-out;
+    }
+
+    &__text {
+        font-size: 15px;
+        line-height: 26px;
+        color: $deep-grey;
+
+        @media (min-width: 979px) {
+            font-size: 16px;
+        }
+    }
+
+    &__image {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+
+        img {
+            object-fit: contain;
+        }
+
+        @media (min-width: 979px) {
+            display: none;
+        }
+    }
+
+    &--open {
+        background-color: $card-bg-open;
+        .accordion-item__button {
+            background-color: $card-bg-open;
+        }
+
+        .accordion-item__content {
+            padding: 0 18px 38px;
+            max-height: 100%;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .accordion-item__chevron {
+            transform: rotate(180deg);
+        }
+
+        .accordion-item__title {
+            color: $active-text;
+        }
+    }
+}

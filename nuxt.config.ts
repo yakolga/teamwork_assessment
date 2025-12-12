@@ -2,5 +2,13 @@
 export default defineNuxtConfig({
   css: ['~/assets/scss/main.scss'],
   compatibilityDate: '2025-07-15',
-  devtools: { enabled: true }
+  devtools: { enabled: true },
+
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'en'
+      }
+    }
+  },
 })

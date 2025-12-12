@@ -1,0 +1,70 @@
+@use 'variables' as *;
+
+.accordion {
+    max-width: 1233px;
+    padding: 40px 30px;
+    margin: 0 auto;
+
+    @media (min-width: 979px) {
+        padding: 20px;
+    }
+
+    &__subheading {
+        font-size: 14px;
+        color: $accent;
+        letter-spacing: 2px;
+        line-height: 25px;
+        margin-bottom: 9px;
+    }
+
+    &__title {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 41px;
+        color: $text;
+        margin-bottom: 34px;
+
+        @media (min-width: 979px) {
+            font-size: 40px;
+        }
+    }
+
+    &__list {
+        .accordion-item:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__layout {
+        @media (min-width: 979px) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+    }
+
+    &__visual {
+        display: none;
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        @media (min-width: 979px) {
+            display: block;
+        }
+    }
+
+    @media (min-width: 979px) {
+        &__column:first-child {
+            max-width: 650px;
+        }
+
+        &__column:last-child {
+            max-width: 400px;
+        }
+    }
+}
